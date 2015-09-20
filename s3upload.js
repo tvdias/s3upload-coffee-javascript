@@ -110,7 +110,8 @@
         };
       }
       xhr.setRequestHeader('Content-Type', file.type);
-      xhr.setRequestHeader('x-amz-acl', 'public-read');
+      xhr.setRequestHeader('Content-Disposition', 'attachment; filename=' + s3_object_name);
+      //xhr.setRequestHeader('x-amz-acl', 'public-read');
       return xhr.send(file);
     };
 

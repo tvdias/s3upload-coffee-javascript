@@ -89,7 +89,8 @@ class window.S3Upload
 					this_s3upload.onProgress percentLoaded, if percentLoaded == 100 then 'Finalizing.' else 'Uploading.'
 
 		xhr.setRequestHeader 'Content-Type', file.type
-		xhr.setRequestHeader 'x-amz-acl', 'public-read'
+		xhr.setRequestHeader 'Content-Disposition', 'attachment; filename=' + s3_object_name
+		#xhr.setRequestHeader 'x-amz-acl', 'public-read'
 
 		xhr.send file
 
